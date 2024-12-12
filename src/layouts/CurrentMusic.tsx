@@ -10,7 +10,7 @@ export const CurrentMusic = () => {
 
   return (
     <div className="absolute bottom-12 w-full px-4 sm:right-6 sm:max-w-md">
-      <div className="w-full overflow-x-auto rounded-xl bg-neutral-300 p-4 drop-shadow-xl transition-all dark:bg-neutral-800">
+      <div className="w-full overflow-x-auto rounded-xl bg-neutral-200 p-4 drop-shadow-xl transition-all dark:bg-neutral-800">
         <h1 className="text-lg font-semibold">
           I&apos;m currently listening to...
         </h1>
@@ -18,10 +18,10 @@ export const CurrentMusic = () => {
           {recentMusic && (
             <div className="mt-3 flex gap-x-2">
               <Image
-                className="rounded-lg"
+                className="flex-shrink-0 rounded-lg"
                 src={recentMusic?.attributes.artwork.url
-                  .replace("{w}", "80")
-                  .replace("{h}", "80")}
+                  .replace("{w}", "240")
+                  .replace("{h}", "240")}
                 alt="Album artwork"
                 width={80}
                 height={80}
