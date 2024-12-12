@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Albert_Sans } from "next/font/google";
 
+import { CurrentMusic } from "@portfolio/layouts/CurrentMusic";
 import { AppleMusicProvider } from "@portfolio/providers/AppleMusicProvider";
 import Head from "next/head";
 import "./globals.css";
@@ -37,6 +38,7 @@ export default function RootLayout({
           <AppleMusicProvider>
             <Navbar />
             {children}
+            <CurrentMusic />
           </AppleMusicProvider>
         </ThemeProvider>
       </body>

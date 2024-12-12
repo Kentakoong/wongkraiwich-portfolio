@@ -17,10 +17,8 @@ export const Navbar = () => {
   const pathname = usePathname();
   return (
     <nav className="grid items-center justify-center gap-x-10 gap-y-4 px-8 py-2 uppercase md:grid-cols-3">
-      <div className="group relative max-md:mx-auto">
-        <Link href="/" className="text-lg tracking-wide">
-          WONGKRAIWICH CHUENCHOMPHU
-        </Link>
+      <div className="group relative w-full text-lg tracking-wide max-md:mx-auto max-md:text-center">
+        <Link href="/">WONGKRAIWICH CHUENCHOMPHU</Link>
         <div className="absolute flex w-full origin-top-left scale-50 gap-x-2 py-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100 max-md:hidden">
           {socialLinks.map((link, idx) => (
             <Link key={idx} href={link.href} target="_blank" rel="noopener">
@@ -29,7 +27,7 @@ export const Navbar = () => {
           ))}
         </div>
       </div>
-      <div className="mx-auto flex gap-x-8 font-normal text-neutral-500 transition-all ease-in-out">
+      <div className="mx-auto flex items-center justify-center gap-x-8 gap-y-4 font-normal text-neutral-500 transition-all ease-in-out max-sm:flex-wrap">
         {navLinks.map(({ href, label }, idx) => (
           <Link
             key={idx}

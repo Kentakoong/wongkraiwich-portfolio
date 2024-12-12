@@ -2,6 +2,7 @@
 
 import { env } from "@portfolio/env";
 import { useRecentMusic } from "@portfolio/hooks/useRecentMusic";
+import { getCookie, setCookie } from "cookies-next";
 import { useEffect } from "react";
 
 export const AppleMusicProvider = ({
@@ -11,9 +12,16 @@ export const AppleMusicProvider = ({
 
   useEffect(() => {
     (async () => {
-      const tokenRes: {
+      const delayUntil = Number(getCookie("apple-music-fetch-delay-until"));
+
+      if (delayUntil && delayUntil > Date.now()) return;
+
+      console.log("fetching");
+
+      const {
+        token,
+      }: {
         token: string;
-        exp: number;
       } = await fetch("/api/apple-music/token", {
         method: "GET",
         headers: {
@@ -29,13 +37,14 @@ export const AppleMusicProvider = ({
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${tokenRes.token}`,
+            Authorization: `Bearer ${token}`,
             "Music-User-Token": env.NEXT_PUBLIC_APPLE_MUSIC_USER_TOKEN,
           },
         },
       ).then((res) => res.json());
 
       setRecentMusic(res.data[0]);
+      setCookie("apple-music-fetch-delay-until", Date.now() + 30000);
     })();
   }, [setRecentMusic]);
 
