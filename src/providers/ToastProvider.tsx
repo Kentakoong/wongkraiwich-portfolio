@@ -10,7 +10,7 @@ export const ToastProvider = ({
       {children}
       <Toaster
         position="bottom-right"
-        className="!sm:right-4 !w-full translate-x-4 translate-y-[-9.5rem] sm:max-w-md"
+        className="!sm:right-4 !w-full -translate-y-40 sm:max-w-md sm:translate-x-4"
         toastOptions={{
           unstyled: true,
           classNames: {
