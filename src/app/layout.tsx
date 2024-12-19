@@ -1,3 +1,4 @@
+import { Footer } from "@portfolio/layouts/Footer";
 import { Navbar } from "@portfolio/layouts/Navbar";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -32,13 +33,18 @@ export default function RootLayout({
         />
       </Head>
       <body
-        className={`${jost.className} bg-neutral-50 py-4 pb-64 text-black antialiased transition dark:bg-neutral-900 dark:text-neutral-50`}
+        className={`${jost.className} bg-neutral-50 py-4 text-black antialiased transition dark:bg-neutral-900 dark:text-neutral-50`}
       >
         <ThemeProvider attribute="data-mode" enableSystem>
           <ToastProvider>
             <AppleMusicProvider>
-              <Navbar />
-              {children}
+              <div className="flex min-h-screen flex-col justify-between">
+                <div>
+                  <Navbar />
+                  {children}
+                </div>
+                <Footer />
+              </div>
             </AppleMusicProvider>
           </ToastProvider>
         </ThemeProvider>
