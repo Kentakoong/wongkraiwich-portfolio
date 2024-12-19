@@ -32,7 +32,7 @@ export default function RootLayout({
         />
       </Head>
       <body
-        className={`${jost.className} bg-neutral-50 py-4 text-black antialiased dark:bg-neutral-900 dark:text-neutral-50`}
+        className={`${jost.className} bg-neutral-50 py-4 pb-64 text-black antialiased transition dark:bg-neutral-900 dark:text-neutral-50`}
       >
         <ThemeProvider attribute="data-mode" enableSystem>
           <ToastProvider>
