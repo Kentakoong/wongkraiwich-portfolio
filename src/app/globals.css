@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .trapezoid-effect-y {
+    transform: perspective(800px) rotateX(10deg);
+  }
+  .trapezoid-effect-x-left {
+    transform: perspective(800px) rotateY(10deg);
+  }
+  .trapezoid-effect-x-right {
+    transform: perspective(800px) rotateY(-10deg);
+  }
+}
