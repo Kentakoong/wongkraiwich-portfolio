@@ -54,9 +54,9 @@ export const AppleMusicProvider = ({
   return (
     <>
       {children}
-      <div className="absolute bottom-4 z-20 w-full sm:right-4 sm:max-w-md">
+      <div className="fixed bottom-4 z-20 w-full sm:right-4 sm:max-w-md">
         <div className="w-full overflow-x-auto rounded-xl bg-neutral-200 p-4 drop-shadow-xl transition-all dark:bg-neutral-800">
-          <h1 className="text-lg font-semibold">
+          <h1 className="text-lg font-semibold transition duration-[50ms]">
             I&apos;m currently listening to...
           </h1>
           <div className={twJoin(!recentMusic && "h-24")}>
@@ -71,7 +71,7 @@ export const AppleMusicProvider = ({
                   width={80}
                   height={80}
                 />
-                <div className="*:animate-marquee flex w-full flex-col overflow-hidden whitespace-nowrap text-lg *:max-w-lg">
+                <div className="*:animate-marquee flex w-full flex-col overflow-hidden whitespace-nowrap text-lg *:max-w-lg *:transition *:duration-75">
                   <MarqueeIfNeeded
                     className="font-bold"
                     text={recentMusic.attributes.name}
