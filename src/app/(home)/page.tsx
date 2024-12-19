@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="mx-auto w-full max-w-screen-2xl space-y-32 px-4">
-      <section className="flex h-[75vh] max-h-max grid-cols-2 flex-col items-center gap-y-10 py-32 max-md:text-center md:grid md:max-h-[60rem]">
+      <section className="flex h-[75vh] max-h-max grid-cols-2 flex-col items-center gap-y-10 py-16 max-md:text-center md:grid md:max-h-[60rem] lg:py-32">
         <div className="max-w-lg lg:px-4">
           <FlipWords
             className="text-4xl font-bold max-md:text-center sm:text-6xl"
@@ -27,7 +27,7 @@ export default function HomePage() {
         </div>
         <div className="max-md:order-first">
           <Image
-            className="mx-auto rounded-full duration-500 max-lg:max-w-64"
+            className="mx-auto rounded-full duration-500 max-lg:max-w-48"
             src="/profile.jpg"
             alt="Profile Picture"
             width={400}
