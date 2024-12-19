@@ -1,6 +1,4 @@
 pnpm prettier:clean
 pnpm lint:fix
 
-git add .
-
 pnpm lint
