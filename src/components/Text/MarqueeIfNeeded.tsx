@@ -25,7 +25,20 @@ export const MarqueeIfNeeded = ({
 
   return (
     <div ref={textRef} className={twMerge("truncate", className)} {...props}>
-      {isOverflow ? <Marquee>{text}</Marquee> : text}
+      {isOverflow ? (
+        <>
+          <Marquee>
+            {text}
+            <div
+              style={{
+                marginRight: (textRef.current?.scrollWidth ?? 0) / 2,
+              }}
+            />
+          </Marquee>
+        </>
+      ) : (
+        text
+      )}
     </div>
   );
 };
