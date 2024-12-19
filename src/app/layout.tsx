@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Albert_Sans } from "next/font/google";
 
-import { CurrentMusic } from "@portfolio/layouts/CurrentMusic";
 import { AppleMusicProvider } from "@portfolio/providers/AppleMusicProvider";
+import { ToastProvider } from "@portfolio/providers/ToastProvider";
 import Head from "next/head";
 import "./globals.css";
 
@@ -35,11 +35,12 @@ export default function RootLayout({
         className={`${jost.className} bg-neutral-50 py-4 text-black antialiased dark:bg-neutral-900 dark:text-neutral-50`}
       >
         <ThemeProvider attribute="data-mode" enableSystem>
-          <AppleMusicProvider>
-            <Navbar />
-            {children}
-            <CurrentMusic />
-          </AppleMusicProvider>
+          <ToastProvider>
+            <AppleMusicProvider>
+              <Navbar />
+              {children}
+            </AppleMusicProvider>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
