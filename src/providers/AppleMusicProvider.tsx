@@ -54,7 +54,7 @@ export const AppleMusicProvider = ({
   return (
     <>
       {children}
-      <div className="fixed bottom-4 z-20 w-full sm:right-4 sm:max-w-md">
+      <div className="fixed bottom-4 z-20 w-full max-sm:px-4 sm:right-4 sm:max-w-md">
         <div className="w-full overflow-x-auto rounded-xl bg-neutral-200 p-4 drop-shadow-xl transition-all dark:bg-neutral-800">
           <h1 className="text-lg font-semibold transition duration-[50ms]">
             I&apos;m currently listening to...
