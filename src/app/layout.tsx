@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { Albert_Sans } from "next/font/google";
 
 import { AppleMusicProvider } from "@portfolio/providers/AppleMusicProvider";
+import { TanstackQueryProvider } from "@portfolio/providers/TanstackQueryProvider";
 import { ToastProvider } from "@portfolio/providers/ToastProvider";
 import Head from "next/head";
 import "./globals.css";
@@ -69,19 +70,21 @@ export default function RootLayout({
       <body
         className={`${jost.className} bg-neutral-50 py-4 text-black antialiased transition max-md:pb-40 dark:bg-neutral-900 dark:text-neutral-50`}
       >
-        <ThemeProvider attribute="data-mode" enableSystem>
-          <ToastProvider>
-            <AppleMusicProvider>
-              <div className="flex min-h-screen flex-col justify-between">
-                <div>
-                  <Navbar />
-                  {children}
+        <TanstackQueryProvider>
+          <ThemeProvider attribute="data-mode" enableSystem>
+            <ToastProvider>
+              <AppleMusicProvider>
+                <div className="flex min-h-screen flex-col justify-between">
+                  <div>
+                    <Navbar />
+                    {children}
+                  </div>
+                  <Footer />
                 </div>
-                <Footer />
-              </div>
-            </AppleMusicProvider>
-          </ToastProvider>
-        </ThemeProvider>
+              </AppleMusicProvider>
+            </ToastProvider>
+          </ThemeProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   );
