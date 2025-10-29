@@ -1,4 +1,3 @@
-pnpm prettier:clean
-pnpm lint:fix
+export NODE_OPTIONS="--experimental-strip-types"
 
-pnpm lint
+npx lint-staged --config lint-staged.config.ts
