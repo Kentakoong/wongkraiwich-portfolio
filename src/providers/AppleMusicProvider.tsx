@@ -30,15 +30,15 @@ export const AppleMusicProvider = ({
             {recentMusic && (
               <div className="mt-3 flex gap-x-2">
                 <Image
+                  alt="Album artwork"
                   className="flex-shrink-0 rounded-lg"
+                  height={80}
                   src={recentMusic?.attributes.artwork.url
                     .replace("{w}", "240")
                     .replace("{h}", "240")}
-                  alt="Album artwork"
                   width={80}
-                  height={80}
                 />
-                <div className="*:animate-marquee flex w-full flex-col overflow-hidden whitespace-nowrap *:max-w-lg *:transition *:duration-75 sm:text-lg">
+                <div className="flex w-full flex-col overflow-hidden whitespace-nowrap *:max-w-lg *:animate-marquee *:transition *:duration-75 sm:text-lg">
                   <MarqueeIfNeeded
                     className="font-bold"
                     text={recentMusic.attributes.name}

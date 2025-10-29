@@ -1,13 +1,12 @@
+import type { Metadata } from "next";
 import { Footer } from "@portfolio/layouts/Footer";
 import { Navbar } from "@portfolio/layouts/Navbar";
-import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
-import { Albert_Sans } from "next/font/google";
-
 import { AppleMusicProvider } from "@portfolio/providers/AppleMusicProvider";
 import { TanstackQueryProvider } from "@portfolio/providers/TanstackQueryProvider";
 import { ToastProvider } from "@portfolio/providers/ToastProvider";
+import { Albert_Sans } from "next/font/google";
 import Head from "next/head";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const jost = Albert_Sans({
@@ -62,9 +61,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <Head>
         <script
-          src="https://js-cdn.music.apple.com/musickit/v3/musickit.js"
-          data-web-components
           async
+          data-web-components
+          src="https://js-cdn.music.apple.com/musickit/v3/musickit.js"
         />
       </Head>
       <body

@@ -11,7 +11,7 @@ import { twJoin } from "tailwind-merge";
 
 const ThemeSwitcher = dynamic(
   () => import("@portfolio/components/action/ThemeSwitcher"),
-  { ssr: false },
+  { ssr: false }
 );
 
 export const Navbar = () => {
@@ -23,30 +23,35 @@ export const Navbar = () => {
           WONGKRAIWICH CHUENCHOMPHU
         </Link>
         <div className="absolute flex w-full origin-top-left scale-50 gap-x-2 py-2 opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100 max-md:hidden">
-          {socialLinks.map((link, idx) => (
-            <Link key={idx} href={link.href} target="_blank" rel="noopener">
+          {socialLinks.map((link) => (
+            <Link
+              href={link.href}
+              key={link.label}
+              rel="noopener"
+              target="_blank"
+            >
               <link.icon className="size-8 fill-neutral-500 transition-all ease-in-out hover:fill-black dark:hover:fill-white" />
             </Link>
           ))}
         </div>
       </div>
       <div className="mx-auto flex items-center justify-center gap-x-4 gap-y-4 font-normal text-neutral-500 transition-all ease-in-out max-sm:flex-wrap sm:gap-x-8">
-        {navLinks.map(({ href, label }, idx) => (
+        {navLinks.map(({ href, label }) => (
           <Link
-            key={idx}
-            href={href}
             className={twJoin(
               "group relative inline-block transition-all duration-300 ease-in-out max-sm:text-sm",
               pathname === href
                 ? "font-medium text-black hover:opacity-80 dark:text-white"
-                : "hover:font-medium hover:text-black dark:hover:text-white",
+                : "hover:font-medium hover:text-black dark:hover:text-white"
             )}
+            href={href}
+            key={label}
           >
             {label}
             <span
               className={twJoin(
                 "absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-in-out group-hover:w-full dark:bg-white",
-                pathname === href ? "w-full group-hover:w-0" : "w-0",
+                pathname === href ? "w-full group-hover:w-0" : "w-0"
               )}
             />
           </Link>
@@ -61,6 +66,7 @@ export const Navbar = () => {
               id: "macmode",
             })
           }
+          type="button"
         >
           <Macintosh className="size-6 fill-neutral-500 transition-all ease-in-out hover:fill-black dark:hover:fill-white" />
         </button>
