@@ -10,7 +10,8 @@
     "lint:fix": "biome check --write .",
     "lint:strict": "tsgo --noEmit",
     "prepare": "husky",
-    "start": "next start"
+    "start": "next start",
+    "release": "release-it"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.8",
@@ -43,6 +44,7 @@
     "knip": "^5.66.4",
     "lint-staged": "^16.2.6",
     "postcss": "^8.5.6",
+    "release-it": "^19.0.5",
     "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3"
   },
