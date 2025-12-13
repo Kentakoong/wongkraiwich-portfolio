@@ -1,6 +1,7 @@
-import { GitHub } from "@portfolio/components/icons/social/GitHub";
-import { LinkedIn } from "@portfolio/components/icons/social/LinkedIn";
 import Link from "next/link";
+
+import { GitHub } from "@/components/icons/social/GitHub";
+import { LinkedIn } from "@/components/icons/social/LinkedIn";
 
 export default function ExperiencesPage() {
   return (

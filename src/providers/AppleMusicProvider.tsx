@@ -1,11 +1,12 @@
 "use client";
 
-import { MarqueeIfNeeded } from "@portfolio/components/Text/MarqueeIfNeeded";
-import { BackendRoutes } from "@portfolio/constants/routes/Backend";
-import { axios } from "@portfolio/lib/axios";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { twJoin } from "tailwind-merge";
+
+import { MarqueeIfNeeded } from "@/components/Text/MarqueeIfNeeded";
+import { BackendRoutes } from "@/constants/routes/Backend";
+import { axios } from "@/lib/axios";
 
 export const AppleMusicProvider = ({
   children,

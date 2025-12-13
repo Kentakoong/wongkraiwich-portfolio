@@ -1,16 +1,17 @@
 "use client";
 
-import { Macintosh } from "@portfolio/components/icons/mode/Macintosh";
-import { GitHub } from "@portfolio/components/icons/social/GitHub";
-import { LinkedIn } from "@portfolio/components/icons/social/LinkedIn";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { toast } from "sonner";
 import { twJoin } from "tailwind-merge";
 
+import { Macintosh } from "@/components/icons/mode/Macintosh";
+import { GitHub } from "@/components/icons/social/GitHub";
+import { LinkedIn } from "@/components/icons/social/LinkedIn";
+
 const ThemeSwitcher = dynamic(
-  () => import("@portfolio/components/action/ThemeSwitcher"),
+  () => import("@/components/action/ThemeSwitcher"),
   { ssr: false }
 );
 

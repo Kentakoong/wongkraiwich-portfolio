@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Footer } from "@portfolio/layouts/Footer";
-import { Navbar } from "@portfolio/layouts/Navbar";
-import { AppleMusicProvider } from "@portfolio/providers/AppleMusicProvider";
-import { TanstackQueryProvider } from "@portfolio/providers/TanstackQueryProvider";
-import { ToastProvider } from "@portfolio/providers/ToastProvider";
 import { Albert_Sans } from "next/font/google";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
+
+import { Footer } from "@/layouts/Footer";
+import { Navbar } from "@/layouts/Navbar";
+import { AppleMusicProvider } from "@/providers/AppleMusicProvider";
+import { TanstackQueryProvider } from "@/providers/TanstackQueryProvider";
+import { ToastProvider } from "@/providers/ToastProvider";
 import "./globals.css";
 
 const jost = Albert_Sans({
