@@ -65,7 +65,6 @@ export const FlipWords = ({
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             className="inline-block whitespace-nowrap"
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            // biome-ignore lint/suspicious/noArrayIndexKey: needs to be unique
             key={word + wordIndex}
             transition={{
               delay: wordIndex * 0.3,
@@ -77,7 +76,6 @@ export const FlipWords = ({
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 className="inline-block"
                 initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                // biome-ignore lint/suspicious/noArrayIndexKey: needs to be unique
                 key={word + letterIndex}
                 transition={{
                   delay: wordIndex * 0.3 + letterIndex * 0.05,

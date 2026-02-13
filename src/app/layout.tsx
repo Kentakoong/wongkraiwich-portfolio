@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Albert_Sans } from "next/font/google";
+import { Figtree } from "next/font/google";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 
+import { ThreeBackground } from "@/components/background/ThreeBackground";
 import { Footer } from "@/layouts/Footer";
 import { Navbar } from "@/layouts/Navbar";
 import { AppleMusicProvider } from "@/providers/AppleMusicProvider";
 import { TanstackQueryProvider } from "@/providers/TanstackQueryProvider";
-import { ToastProvider } from "@/providers/ToastProvider";
 import "./globals.css";
 
-const jost = Albert_Sans({
-  subsets: ["latin"],
-});
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wongkraiwich.dev"),
@@ -59,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className={figtree.variable} lang="en">
       <Head>
         <script
           async
@@ -67,22 +65,19 @@ export default function RootLayout({
           src="https://js-cdn.music.apple.com/musickit/v3/musickit.js"
         />
       </Head>
-      <body
-        className={`${jost.className} bg-neutral-50 py-4 text-black antialiased transition max-md:pb-40 dark:bg-neutral-900 dark:text-neutral-50`}
-      >
+      <body className="antialiased">
         <TanstackQueryProvider>
-          <ThemeProvider attribute="data-mode" enableSystem>
-            <ToastProvider>
-              <AppleMusicProvider>
-                <div className="flex min-h-screen flex-col justify-between">
-                  <div>
-                    <Navbar />
-                    {children}
-                  </div>
-                  <Footer />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThreeBackground />
+            <AppleMusicProvider>
+              <div className="relative z-10 flex min-h-screen flex-col justify-between">
+                <div>
+                  <Navbar />
+                  {children}
                 </div>
-              </AppleMusicProvider>
-            </ToastProvider>
+                <Footer />
+              </div>
+            </AppleMusicProvider>
           </ThemeProvider>
         </TanstackQueryProvider>
       </body>

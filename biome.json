@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -93,6 +93,16 @@
           }
         }
       }
+    },
+    {
+      "includes": ["src/components/ui/label.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "noLabelWithoutControl": "off"
+          }
+        }
+      }
     }
   ],
   "linter": {
@@ -113,7 +123,9 @@
         "useArrowFunction": "error",
         "useFlatMap": "error",
         "useLiteralKeys": "error",
-        "useOptionalChain": "error"
+        "useOptionalChain": "error",
+        "noUselessTernary": "error",
+        "noExtraBooleanCast": "error"
       },
       "correctness": {
         "noConstAssign": "error",
@@ -129,7 +141,11 @@
         "noUndeclaredVariables": "error",
         "noUnreachable": "error",
         "noUnreachableSuper": "error",
-        "noUnusedImports": "error",
+        "noUnusedImports": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        },
         "noUnusedVariables": "error",
         "noUnsafeFinally": "error",
         "noUnsafeOptionalChaining": "error",
@@ -147,6 +163,11 @@
         "noDangerouslySetInnerHtml": "off"
       },
       "style": {
+        "useNodejsImportProtocol": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        },
         "noInferrableTypes": "error",
         "noNamespace": "error",
         "noNegationElse": "error",
@@ -160,6 +181,7 @@
         "useConst": "error",
         "useConsistentArrayType": {
           "level": "error",
+          "fix": "safe",
           "options": {
             "syntax": "generic"
           }
@@ -176,7 +198,6 @@
         "useTemplate": "error"
       },
       "suspicious": {
-        "noArrayIndexKey": "error",
         "noAsyncPromiseExecutor": "error",
         "noAssignInExpressions": "error",
         "noCatchAssign": "error",
@@ -186,7 +207,10 @@
         "noConsole": "warn",
         "noControlCharactersInRegex": "error",
         "noDebugger": "error",
-        "noDoubleEquals": "error",
+        "noDoubleEquals": {
+          "level": "error",
+          "fix": "safe"
+        },
         "noDuplicateCase": "error",
         "noDuplicateClassMembers": "error",
         "noDuplicateObjectKeys": "error",
@@ -210,7 +234,8 @@
         "noSparseArray": "error",
         "noUnsafeDeclarationMerging": "error",
         "noUnsafeNegation": "error",
-        "useGetterReturn": "error"
+        "useGetterReturn": "error",
+        "noArrayIndexKey": "off"
       },
       "nursery": {
         "useSortedClasses": {

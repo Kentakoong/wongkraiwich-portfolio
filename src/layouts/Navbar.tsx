@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { toast } from "sonner";
 import { twJoin } from "tailwind-merge";
 
 import { Macintosh } from "@/components/icons/mode/Macintosh";
@@ -60,15 +59,7 @@ export const Navbar = () => {
       </div>
       <div className="flex items-center justify-center gap-x-4 md:justify-end">
         <ThemeSwitcher />
-        <button
-          onClick={() =>
-            toast.info("Coming Soon!", {
-              description: "It's a secret🤫",
-              id: "macmode",
-            })
-          }
-          type="button"
-        >
+        <button type="button">
           <Macintosh className="size-6 fill-neutral-500 transition-all ease-in-out hover:fill-black dark:hover:fill-white" />
         </button>
       </div>
