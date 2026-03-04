@@ -135,7 +135,7 @@ export default function ExperiencesPage() {
               {/* Timeline Dot */}
               <div
                 className={cn(
-                  "-left-[9px] absolute top-2 h-4 w-4 rounded-full border-4 border-background transition-colors duration-300",
+                  "absolute top-2 -left-[9px] h-4 w-4 rounded-full border-4 border-background transition-colors duration-300",
                   exp.isCurrent
                     ? "bg-primary ring-4 ring-primary/20"
                     : "bg-muted-foreground"

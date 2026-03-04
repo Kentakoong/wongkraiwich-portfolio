@@ -71,7 +71,7 @@ export default function HomePage() {
               </Link>
               <Image
                 alt="Mixr Preview"
-                className="group-hover:trapezoid-effect-y -bottom-52 group-hover:-bottom-[24rem] absolute right-0 left-0 mx-auto w-56 transform-gpu transition-all duration-[1s] ease-in-out group-hover:w-[26rem]"
+                className="group-hover:trapezoid-effect-y absolute right-0 -bottom-52 left-0 mx-auto w-56 transform-gpu transition-all duration-[1s] ease-in-out group-hover:-bottom-[24rem] group-hover:w-[26rem]"
                 height={1887}
                 src="/projects/mixr/preview.png"
                 width={932}
@@ -105,7 +105,7 @@ export default function HomePage() {
             </Link>
             <Image
               alt="Alpha Preview"
-              className="-translate-x-24 group-hover:-translate-x-[11.5rem] translate-y-24 scale-[200%] transition-all duration-500 ease-in-out group-hover:translate-y-32 group-hover:scale-[250%]"
+              className="-translate-x-24 translate-y-24 scale-[200%] transition-all duration-500 ease-in-out group-hover:-translate-x-[11.5rem] group-hover:translate-y-32 group-hover:scale-[250%]"
               height={1696}
               src="/projects/musicbar/alpha-preview.png"
               width={2574}
@@ -136,7 +136,7 @@ export default function HomePage() {
               </Link>
               <Image
                 alt="SiriSings Preview"
-                className="group-hover:trapezoid-effect-y -bottom-52 group-hover:-bottom-[24rem] absolute right-0 left-0 mx-auto w-56 transform-gpu transition-all duration-[1s] ease-in-out group-hover:w-[26rem]"
+                className="group-hover:trapezoid-effect-y absolute right-0 -bottom-52 left-0 mx-auto w-56 transform-gpu transition-all duration-[1s] ease-in-out group-hover:-bottom-[24rem] group-hover:w-[26rem]"
                 height={1887}
                 src="/projects/sirisings/preview.png"
                 width={932}

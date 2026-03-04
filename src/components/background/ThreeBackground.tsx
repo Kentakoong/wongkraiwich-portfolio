@@ -51,8 +51,8 @@ void main() {
 `;
 
 function WaveParticles({ color }: { color: string }) {
-  const ref = useRef<THREE.ShaderMaterial>(null!);
-  const pointsRef = useRef<THREE.Points>(null!);
+  const ref = useRef<THREE.ShaderMaterial>(null);
+  const pointsRef = useRef<THREE.Points>(null);
   const count = 120; // Increased count
   const sep = 3;
 
@@ -116,6 +116,7 @@ function WaveParticles({ color }: { color: string }) {
     <points ref={pointsRef} rotation={[-Math.PI / 6, 0, 0]}>
       <bufferGeometry>
         <bufferAttribute
+          args={[positions, 3]}
           array={positions}
           attach="attributes-position"
           count={positions.length / 3}
