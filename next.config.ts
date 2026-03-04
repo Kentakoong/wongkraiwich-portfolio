@@ -1,14 +1,14 @@
-import createJiti from "jiti";
 import type { NextConfig } from "next";
-import { fileURLToPath } from "node:url";
-const jiti = createJiti(fileURLToPath(import.meta.url));
-
-jiti("./src/env.ts");
 
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [
+      {
+        hostname: "avatars.githubusercontent.com",
+        pathname: "/u/**",
+        protocol: "https",
+      },
       {
         protocol: "https",
         hostname: "is1-ssl.mzstatic.com",

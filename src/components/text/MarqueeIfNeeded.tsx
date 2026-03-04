@@ -18,24 +18,22 @@ export const MarqueeIfNeeded = ({
   const [isOverflow, setIsOverflow] = useState(false);
 
   useEffect(() => {
-    if (!textRef.current) return;
+    if (!textRef.current || !text) return;
 
     setIsOverflow(textRef.current.scrollWidth > textRef.current.clientWidth);
   }, [text]);
 
   return (
-    <div ref={textRef} className={twMerge("truncate", className)} {...props}>
+    <div className={twMerge("truncate", className)} ref={textRef} {...props}>
       {isOverflow ? (
-        <>
-          <Marquee>
-            {text}
-            <div
-              style={{
-                marginRight: (textRef.current?.scrollWidth ?? 0) / 2,
-              }}
-            />
-          </Marquee>
-        </>
+        <Marquee>
+          {text}
+          <div
+            style={{
+              marginRight: (textRef.current?.scrollWidth ?? 0) / 2,
+            }}
+          />
+        </Marquee>
       ) : (
         text
       )}

@@ -1,34 +1,37 @@
 export const Macintosh = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
-    width="335"
+    aria-hidden="true"
+    aria-label="Macintosh icon"
+    aria-labelledby="Macintosh icon"
+    fill="black"
     height="428"
     viewBox="0 0 335 428"
-    fill="black"
+    width="335"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
-      fillRule="evenodd"
       clipRule="evenodd"
       d="M320 361H14V428H320V361ZM307 375H28V415H307V375Z"
+      fillRule="evenodd"
     />
-    <rect x="320" y="29" width="15" height="332" />
-    <rect y="29" width="15" height="332" />
-    <rect x="15" y="16" width="12" height="13" />
-    <rect x="308" y="16" width="12" height="13" />
-    <rect x="27" width="281" height="16" />
-    <rect x="53" y="41" width="229" height="13" />
-    <rect x="106" y="94" width="16" height="29" />
-    <rect x="200" y="94" width="16" height="29" />
-    <rect x="160" y="95" width="15" height="66" />
-    <rect x="147" y="148" width="13" height="13" />
-    <rect x="121" y="175" width="13" height="13" />
-    <rect x="187" y="175" width="13" height="13" />
-    <rect x="42" y="309" width="26" height="13" />
-    <rect x="200" y="296" width="81" height="13" />
-    <rect x="134" y="188" width="53" height="14" />
-    <rect x="53" y="230" width="229" height="13" />
-    <rect x="40" y="54" width="13" height="176" />
-    <rect x="282" y="54" width="13" height="176" />
+    <rect height="332" width="15" x="320" y="29" />
+    <rect height="332" width="15" y="29" />
+    <rect height="13" width="12" x="15" y="16" />
+    <rect height="13" width="12" x="308" y="16" />
+    <rect height="16" width="281" x="27" />
+    <rect height="13" width="229" x="53" y="41" />
+    <rect height="29" width="16" x="106" y="94" />
+    <rect height="29" width="16" x="200" y="94" />
+    <rect height="66" width="15" x="160" y="95" />
+    <rect height="13" width="13" x="147" y="148" />
+    <rect height="13" width="13" x="121" y="175" />
+    <rect height="13" width="13" x="187" y="175" />
+    <rect height="13" width="26" x="42" y="309" />
+    <rect height="13" width="81" x="200" y="296" />
+    <rect height="14" width="53" x="134" y="188" />
+    <rect height="13" width="229" x="53" y="230" />
+    <rect height="176" width="13" x="40" y="54" />
+    <rect height="176" width="13" x="282" y="54" />
   </svg>
 );
