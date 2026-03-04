@@ -80,5 +80,5 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/experiences", label: "Experiences" },
   { href: "/projects", label: "Projects" },
-  { href: "/tools", label: "Tools" },
+  // { href: "/tools", label: "Tools" },
 ];
