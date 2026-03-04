@@ -3,6 +3,7 @@ export const GitHub = (props: React.SVGProps<SVGSVGElement>) => (
     aria-hidden="true"
     aria-label="GitHub icon"
     aria-labelledby="GitHub icon"
+    fill="currentColor"
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
