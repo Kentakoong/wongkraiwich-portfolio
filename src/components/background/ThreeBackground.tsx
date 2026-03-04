@@ -145,10 +145,17 @@ export function ThreeBackground() {
   if (!mounted) return null;
 
   const isDark = resolvedTheme === "dark";
-  const particleColor = isDark ? "#ffffff" : "#000000";
+  const particleColor =
+    typeof document !== "undefined"
+      ? getComputedStyle(document.documentElement)
+          .getPropertyValue("--particle-color")
+          .trim() || (isDark ? "#e5e5e5" : "#1a1a1a")
+      : isDark
+        ? "#e5e5e5"
+        : "#1a1a1a";
 
   return (
-    <div className="pointer-events-none fixed inset-0 h-full w-full opacity-60">
+    <div className="pointer-events-none fixed inset-0 z-0 h-screen min-h-dvh w-full opacity-60">
       <Canvas camera={{ position: [0, 0, 45], fov: 60 }} dpr={[1, 2]}>
         <group dispose={null}>
           <WaveParticles color={particleColor} />
